@@ -137,3 +137,44 @@ const Body = () => {
 };
 
 export default Body;
+
+// import { useState, useEffect } from "react";
+
+// const UserFilter = () => {
+//   const [users, setUsers] = useState([]);
+//   const [search, setSearch] = useState("");
+//   const [filteredUsers, setFilteredUsers] = useState([]);
+
+//   // Fetch users from API
+//   useEffect(() => {
+//     fetch("https://jsonplaceholder.typicode.com/users")
+//       .then((response) => response.json())
+//       .then((data) => setUsers(data));
+//   }, []);
+
+//   // Filter users when search input changes
+//   useEffect(() => {
+//     setFilteredUsers(
+//       users.filter((user) => user.name.toLowerCase().includes(search.toLowerCase()))
+//     );
+//   }, [search, users]); // Runs when `search` or `users` change
+
+//   return (
+//     <div>
+//       <h2>Search Users</h2>
+//       <input
+//         type="text"
+//         placeholder="Search users..."
+//         value={search}
+//         onChange={(e) => setSearch(e.target.value)}
+//       />
+//       <ul>
+//         {filteredUsers.map((user) => (
+//           <li key={user.id}>{user.name}</li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default UserFilter;
