@@ -1,19 +1,58 @@
-import { createSlice } from '@reduxjs/toolkit';
+ 
+import { createSlice } from "@reduxjs/toolkit";
 
 const orderSlice = createSlice({
-  name: 'order',
+  name: "order",
   initialState: {
     orders: [],
   },
   reducers: {
     placeOrder: (state, action) => {
-      state.orders.push(action.payload); // Add a new order
+      state.orders.push(action.payload);
     },
     cancelOrder: (state, action) => {
-      state.orders.splice(action.payload, 1); // Remove order by index
+      state.orders = state.orders.filter(order => order.orderId !== action.payload);
+    },
+    updateOrderStatus: (state, action) => {
+      const { orderId, newStatus, location } = action.payload;
+      const order = state.orders.find(order => order.orderId === orderId);
+      if (order) {
+        order.status = newStatus;
+        if (location) {
+          order.location = location;
+        }
+      }
     },
   },
 });
 
-export const { placeOrder, cancelOrder } = orderSlice.actions;
+export const { placeOrder, cancelOrder, updateOrderStatus } = orderSlice.actions;
 export default orderSlice.reducer;
+
+
+
+
+// import { createSlice } from '@reduxjs/toolkit';
+
+// const orderSlice = createSlice({
+//   name: 'order',
+//   initialState: {
+//     orders: [],
+//   },
+//   reducers: {
+//     placeOrder: (state, action) => {
+//       const newOrder = {
+//         orderId: `ORD-${Date.now()}`, // Unique Order ID
+//         items: action.payload, // Ensure items are stored inside an array
+//       };
+//       state.orders.push(newOrder);
+//     },
+//     cancelOrder: (state, action) => {
+//       state.orders = state.orders.filter(order => order.orderId !== action.payload);
+//     },
+//   },
+// });
+
+// export const { placeOrder, cancelOrder } = orderSlice.actions;
+// export default orderSlice.reducer;
+

@@ -16,7 +16,7 @@ const Trends = () => {
 />
 </div>
     <div className="carousel-item">
-      <img src="https://img.freepik.com/free-vector/hand-drawn-winter-horizontal-banner_23-2149135171.jpg?t=st=1736323718~exp=1736327318~hmac=2e495bc066ef8d300d0dbc6a8d7869cd9c11944b6df8e06f80e07cb78f5511e6&w=740"   className="img-fluid d-block w-100"  alt="freepik.jpg"/>
+      <img src="https://img.freepik.com/premium-photo/chilly-deals-winter-sale-background-design_931866-155168.jpg"   className="img-fluid d-block w-100"  alt="freepik.jpg"/>
     </div>
     <div className="carousel-item">
       <img src="https://img.freepik.com/free-psd/beautiful-winter-holiday-banner-template_23-2149174522.jpg?t=st=1736323794~exp=1736327394~hmac=7dc8efc4c69f06605fe52c02e2d438738f6cd6a43dedb8f35e0e8fc2b8ea948f&w=996"   className="img-fluid d-block w-100"  alt="freepik.jpg"/>
@@ -30,10 +30,19 @@ const Trends = () => {
     <span className="carousel-control-next-icon" aria-hidden="true"></span>
     <span className="visually-hidden">Next</span>
   </button>
+  
 </div>
+   
 <div>
     </div>
-       
+    <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src= "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/32c1d797496373.5ec65c6e12f4b.jpg"   className="img-fluid d-block w-100"  alt="mir.jpg"/>
+    </div>
+     
+  </div>
+</div>
     </div>
     
     </NavLink>

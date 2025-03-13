@@ -4,6 +4,7 @@ import ProductsCard from "./ProductsCard";
 // index.js or App.js
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import Footer from "./Footer";
  
 const Body = () => {
   const [products, setProducts] = useState([]);
@@ -50,9 +51,9 @@ const Body = () => {
           <div className="carousel-inner">
             <div className="carousel-item active" data-bs-interval="3000">
               <img
-                src="https://img.freepik.com/free-psd/fashion-banner-with-model-colourful-blouse-text-light-background_125540-5695.jpg?w=1380&t=st=1714476173~exp=1714476773~hmac=83a24f54e1b4c45dbce431a9fd46b344b30b169361ebe22adc61a10f6d973ac0"
+                src="https://marketplace.canva.com/EAFoEJMTGiI/1/0/1600w/canva-beige-aesthetic-new-arrival-fashion-banner-landscape-cNjAcBMeF9s.jpg"
                 className="img-fluid d-block w-100" 
-                alt="Fashion Banner 1"
+                alt="img.jpg"
               />
             </div>
             <div className="carousel-item" data-bs-interval="3000">
@@ -123,11 +124,14 @@ const Body = () => {
                 image={product.image}
               />
             </Link>
+            
           ))
+          
         ) : (
            <p>loading...</p>
         )}
       </div>
+      <Footer />
     </>
   );
 };
