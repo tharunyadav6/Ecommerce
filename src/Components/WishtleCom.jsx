@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromWishList } from '/src/Redux/slices/wishListSlice';
-import { addToCart } from '/src/Redux/slices/cartSlice'; // Ensure this action is imported
+import { removeFromWishList } from '../Redux/Slices/wishListSlice';
+import { addToCart } from '../Redux/Slices/cartSlice'; // Ensure this action is imported
 
 const Wishtle = () => {
   const wishListItems = useSelector((state) => state.wishList.items); // Get wishlist items from Redux state
