@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 // import { removeFromWishList } from '../Redux/Slices/wishListSlice.js';
-import { removeFromWishList } from "@Redux/Slices/wishListSlice.js"
+import { removeFromWishList } from "../Redux/Slices/wishListSlice.js"
 
 // import { removeFromWishList } from "../Redux/Slices/wishListSlice";
 
