@@ -103,6 +103,7 @@ const Body = () => {
         <input
           type="text"
           placeholder="Search products..."
+          name="search"
           value={search}
           onChange={handleSearch}
         />

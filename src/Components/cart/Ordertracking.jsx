@@ -1,7 +1,7 @@
  
  import React, { useEffect, useState } from "react";
  import { useSelector, useDispatch } from "react-redux";
- import { updateOrderStatus } from "../Redux/Slices/orderSlice";
+ import { updateOrderStatus } from "../../Redux/Slices/orderSlice";
  
  const OrderTracking = ({ orderId }) => {
    const dispatch = useDispatch();

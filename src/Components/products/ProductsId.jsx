@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import {addToCart } from '../Redux/Slices/cartSlice';
-import { addToWishList } from '../Redux/Slices/wishListSlice';
+import { addToCart } from '../../Redux/Slices/cartSlice';
+import { addToWishList } from '../../Redux/Slices/wishListSlice';
  
 const ProductsId = () => {
   const { ProId } = useParams(); // Get the ProId from the URL

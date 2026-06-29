@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { placeOrder, cancelOrder } from "../Redux/Slices/orderSlice";
-import OrderTracking from "../Components/Ordertracking";
+import { placeOrder, cancelOrder } from "../../Redux/Slices/orderSlice";
+import OrderTracking from "./Ordertracking";
 
 const OrderConfirmation = () => {
   const dispatch = useDispatch();
@@ -97,13 +97,13 @@ const OrderConfirmation = () => {
       {/* ✅ Address Section with "Use My Location" */}
       <div style={{ marginBottom: "15px" }}>
         <h3>Delivery Address</h3>
-        <textarea 
-          value={address} 
+        <textarea
+          value={address}
           onChange={(e) => setAddress(e.target.value)}
-          rows="2" 
-          style={{ width: "100%", padding: "5px" }} 
+          rows="2"
+          style={{ width: "100%", padding: "5px" }}
         />
-        <button onClick={handleGetLocation} 
+        <button onClick={handleGetLocation}
           style={{ marginTop: "10px", backgroundColor: "#008CBA", color: "white", padding: "8px", border: "none", borderRadius: "5px", cursor: "pointer" }}>
           Use My Current Location 📍
         </button>
@@ -115,24 +115,24 @@ const OrderConfirmation = () => {
           <h3>Payment Options</h3>
           <div>
             <label>
-              <input 
-                type="radio" 
-                name="paymentMethod" 
-                value="cod" 
-                checked={paymentMethod === "cod"} 
-                onChange={(e) => { setPaymentMethod(e.target.value); setSelectedPaymentApp(""); setIsPaid(false); }} 
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="cod"
+                checked={paymentMethod === "cod"}
+                onChange={(e) => { setPaymentMethod(e.target.value); setSelectedPaymentApp(""); setIsPaid(false); }}
               />
               Cash on Delivery
             </label>
           </div>
           <div>
             <label>
-              <input 
-                type="radio" 
-                name="paymentMethod" 
-                value="online" 
-                checked={paymentMethod === "online"} 
-                onChange={(e) => setPaymentMethod(e.target.value)} 
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="online"
+                checked={paymentMethod === "online"}
+                onChange={(e) => setPaymentMethod(e.target.value)}
               />
               Online Payment
             </label>
@@ -142,8 +142,8 @@ const OrderConfirmation = () => {
           {paymentMethod === "online" && (
             <div style={{ marginTop: "10px" }}>
               <h4>Select Payment App:</h4>
-              <select 
-                value={selectedPaymentApp} 
+              <select
+                value={selectedPaymentApp}
                 onChange={(e) => setSelectedPaymentApp(e.target.value)}
                 style={{ padding: "5px", width: "100%", marginBottom: "10px" }}
               >
@@ -156,7 +156,7 @@ const OrderConfirmation = () => {
           )}
 
           {/* ✅ Confirm Order Button */}
-          <button onClick={handleConfirmOrder} 
+          <button onClick={handleConfirmOrder}
             style={{ marginTop: "10px", backgroundColor: "#4CAF50", color: "white", padding: "10px", border: "none", borderRadius: "5px" }}>
             {paymentMethod === "online" ? "Pay" : "Place Order"}
           </button>
@@ -172,14 +172,14 @@ const OrderConfirmation = () => {
           <OrderTracking orderId={orderId} />
 
           {/* ❌ Cancel Order Button */}
-          <button onClick={() => dispatch(cancelOrder(orderId))} 
+          <button onClick={() => dispatch(cancelOrder(orderId))}
             style={{ marginTop: "10px", backgroundColor: "#F44336", color: "white", padding: "10px", border: "none", borderRadius: "5px" }}>
             Cancel Order
           </button>
 
           {/* 🔄 Refund Button (Only after Payment) */}
           {isPaid && (
-            <button onClick={handleRefund} 
+            <button onClick={handleRefund}
               style={{ marginTop: "10px", marginLeft: "10px", backgroundColor: "#FF9800", color: "white", padding: "10px", border: "none", borderRadius: "5px" }}>
               Refund
             </button>

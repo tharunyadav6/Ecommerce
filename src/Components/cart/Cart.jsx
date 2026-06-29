@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, clearCart, updateSize, updateQuantity } from "../Redux/Slices/cartSlice.js";
-import { placeOrder } from "../Redux/Slices/orderSlice.js";
+import { removeFromCart, clearCart, updateSize, updateQuantity } from "../../Redux/Slices/cartSlice.js";
+import { placeOrder } from "../../Redux/Slices/orderSlice.js";
 import { NavLink } from "react-router-dom";
 
 const Cart = () => {
